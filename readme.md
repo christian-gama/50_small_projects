@@ -1,6 +1,6 @@
 # 50 small projects
 
-I have created 50 projects using HTML, CSS & TypeScript to improve my skills. TypeScript may seems an overkill for these projects, but I wanted to practice using it anyway.
+I have created 50 projects using HTML, CSS & JavaScript to improve my skills. I used TypeScript to write my code and it may seems an overkill for these small projects, but I wanted to practice using it anyway.
 Although I developed these projects, all the ideas were taken from Brad Traversy & Florin Pop, teachers from Udemy.
 
 ## Summary

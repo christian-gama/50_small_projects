@@ -23,16 +23,15 @@ class ProgressStepComponent {
         button.id === 'progress-step__next' ? this.currentStep++ : this.currentStep--;
 
         if (this.currentStep > 1 && this.currentStep < this.circles.length) {
-            this.buttons[0].disabled = false;
-            this.buttons[1].disabled = false;
+            this.buttons.forEach((button) => (button.disabled = false));
         }
 
-        if (this.currentStep <= 1) {
-            this.buttons[0].disabled = true;
+        if (this.currentStep <= 1 && button.id === 'progress-step__previous') {
+            button.disabled = true;
         }
 
-        if (this.currentStep >= this.circles.length) {
-            this.buttons[1].disabled = true;
+        if (this.currentStep >= this.circles.length && button.id === 'progress-step__next') {
+            button.disabled = true;
         }
 
         return this.updateStep();
