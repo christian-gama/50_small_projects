@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+    --white: #ffffff;
+    --dark-grey: #333333;
+    --light-grey: #9c9c9c;
+    --lighten-grey: #d8d8d8;
+    --light-blue: #3498db;
+    --lighten-blue: #3ca5ec;
+    --lighter-blue: #9ed8ff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+
+    color: var(--dark-grey);
+
+    font-family: 'Roboto', sans-serif;
+
+    overflow: hidden;
+}
+
+.progress-step {
+    text-align: center;
+    font-size: 14px;
+}
+
+.progress-step > * {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.progress-step__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    width: 400px;
+
+    margin-bottom: 30px;
+}
+
+.progress-step__container::before {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background-color: var(--lighten-grey);
+
+    transform: translateY(-50%);
+
+    z-index: -1;
+}
+
+.progress-step__bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 0%;
+    height: 4px;
+
+    background-color: var(--light-blue);
+
+    transform: translateY(-50%);
+
+    transition: width 0.3s ease-in;
+    z-index: -1;
+}
+
+.progress-step__circle{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    background-color: var(--white);
+    border: 2px solid var(--lighten-grey);
+    border-radius: 50%;
+
+    text-align: center;
+    line-height: 2.2; /* Make fully align vertically */
+
+    transition: background-color 0.1s 0.2s ease-out, color 0.1s 0.2s ease-out, border 0.1s 0.2s ease-out;
+}
+
+.progress-step__circle--active {
+    background: var(--light-blue);
+    border: 2px solid var(--light-blue);
+    color: var(--white);
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+
+    background-color: var(--light-blue);
+    border: 0;
+    border-radius: 5px;
+    color: var(--white);
+
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--lighten-blue);
+
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:disabled {
+    background-color: var(--lighten-grey);
+    color: var(--light-grey);
+
+    cursor: not-allowed;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 2px 3px var(--lighter-blue);
+}

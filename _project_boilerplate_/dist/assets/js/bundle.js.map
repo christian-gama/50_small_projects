@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://50_projects/./src/index.ts"],"names":[],"mappings":";;;;;;;AAAA,OAAO,CAAC,GAAG,CAAC,IAAI,CAAC,CAAC","file":"bundle.js","sourcesContent":["console.log('oi');\n"],"sourceRoot":""}
