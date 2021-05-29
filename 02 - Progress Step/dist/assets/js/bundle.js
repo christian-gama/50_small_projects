@@ -46,8 +46,8 @@ class ProgressStepComponent {
         }
     }
 }
-const progressBar = new ProgressStepComponent();
-progressBar.addEventToButtons();
+const progressStep = new ProgressStepComponent();
+progressStep.addEventToButtons();
 
 /******/ })()
 ;
