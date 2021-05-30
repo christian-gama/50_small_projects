@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+:root {
+    /* Sizes */
+    --button-width: 50px;
+    --button-height: 50px;
+    --search-height: var(--button-height);
+    --search-width: 320px;
+    --icon-size: calc(var(--button-height) / 2);
+
+    /* Colors */
+    --input-color: rgb(255, 255, 255);
+    --font-color: #333;
+    --placeholder-color: #888;
+    --linear-gradient: linear-gradient(to top left, rgb(87, 87, 201), rgb(113, 95, 179));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+
+    background-image: var(--linear-gradient);
+
+    font-family: 'Roboto', sans-serif;
+    color: var(--font-color);
+
+    overflow: hidden;
+}
+
+.search__container {
+    position: relative;
+
+    height: var(--search-height);
+}
+
+.search__input {
+    width: 0px;
+    height: var(--search-height);
+    padding: 0 15px;
+
+    background-color: var(--input-color);
+    border: 0;
+    border-radius: 5px;
+
+    font-size: 16px;
+
+    transform-origin: left;
+    transition: width 0.3s ease, padding 0.3s ease;
+}
+
+.search__input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.search__button {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: var(--button-width);
+    height: var(--button-height);
+    border: 0;
+    border-radius: 5px;
+
+    background-color: var(--input-color);
+    color: var(--font-color);
+
+    font-size: var(--icon-size);
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.search__container--active .search__input {
+    width: var(--search-width);
+    padding: 0 var(--button-width) 0 15px;
+}
+
+.search__container.search__container--active .search__button {
+    border-radius: 0 5px 5px 0;
+
+    transform: translateX(calc(var(--search-width) - (var(--button-width))));
+}
+
+.search__input:focus,
+.search__icon:focus {
+    outline: none;
+    box-shadow: 0 0 0px 1px;
+}
